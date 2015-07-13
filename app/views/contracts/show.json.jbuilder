@@ -1,0 +1,1 @@
+json.extract! @contract, :id, :contract_num, :order_identifier, :review_date, :sample_income_date, :protocole_done_date, :agre_finish_date, :cost, :backup_cost, :back_pay, :fact_netto, :customer_id, :customer, :contract_type_id, :contract_type, :user_id, :user, :created_at, :updated_at

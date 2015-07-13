@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  resources :contracts
+  resources :constract_types
+  resources :customers
+  resources :adresses
+  root 'bases#index'
+
+  get 'bases/index'
+
+  get 'bases' => 'base/index'
+
+  resources :bases
+  devise_for :users
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

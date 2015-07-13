@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bases</h1>
+
+<% if @base == nil or @base.empty? %>
+  <div id='center'>
+    <h1>Tady Bude přehled všeho!!!! BASE stránka!!!</h1>
+  </div>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @bases.each do |basis| %>
+        <tr>
+          <td><%= link_to 'Show', basis %></td>
+          <td><%= link_to 'Edit', edit_basis_path(basis) %></td>
+          <td><%= link_to 'Destroy', basis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+<br>
+
+<% #= link_to 'New Base', new_basis_path %>

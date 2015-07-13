@@ -1,0 +1,70 @@
+<%= form_for(@contract) do |f| %>
+  <% if @contract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contract.errors.count, "error") %> prohibited this contract from being saved:</h2>
+
+      <ul>
+      <% @contract.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= @users.to_json.html_safe %>
+  <div class="field">
+    <%= f.label :contract_num %><br>
+    <%= f.text_field :contract_num %>
+  </div>
+  <div class="field">
+    <%= f.label :order_identifier %><br>
+    <%= f.text_field :order_identifier %>
+  </div>
+  <div class="field">
+    <%= f.label :review_date %><br>
+    <%= f.date_field :review_date %>
+  </div>
+  <div class="field">
+    <%= f.label :sample_income_date %><br>
+    <%= f.date_field :sample_income_date %>
+  </div>
+  <div class="field">
+    <%= f.label :protocole_done_date %><br>
+    <%= f.date_field :protocole_done_date %>
+  </div>
+  <div class="field">
+    <%= f.label :agre_finish_date %><br>
+    <%= f.date_field :agre_finish_date %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :backup_cost %><br>
+    <%= f.text_field :backup_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :back_pay %><br>
+    <%= f.text_field :back_pay %>
+  </div>
+  <div class="field">
+    <%= f.label :fact_netto %><br>
+    <%= f.text_field :fact_netto %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %><br>
+    <%= f.text_field :customer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :contract_type_id %><br>
+    <%= f.text_field :contract_type_id %>
+  </div>
+  <div class="field">
+
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

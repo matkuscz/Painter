@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Contracts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Contract num</th>
+      <th>Order identifier</th>
+      <th>Review date</th>
+      <th>Sample income date</th>
+      <th>Protocole done date</th>
+      <th>Agre finish date</th>
+      <th>Cost</th>
+      <th>Backup cost</th>
+      <th>Back pay</th>
+      <th>Fact netto</th>
+      <th>Customer</th>
+      <th>Customer</th>
+      <th>Contract type</th>
+      <th>Contract type</th>
+      <th>User</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contracts.each do |contract| %>
+      <tr>
+        <td><%= contract.contract_num %></td>
+        <td><%= contract.order_identifier %></td>
+        <td><%= contract.review_date %></td>
+        <td><%= contract.sample_income_date %></td>
+        <td><%= contract.protocole_done_date %></td>
+        <td><%= contract.agre_finish_date %></td>
+        <td><%= contract.cost %></td>
+        <td><%= contract.backup_cost %></td>
+        <td><%= contract.back_pay %></td>
+        <td><%= contract.fact_netto %></td>
+        <td><%= contract.customer %></td>
+        <td><%= contract.customer %></td>
+        <td><%= contract.contract_type %></td>
+        <td><%= contract.contract_type %></td>
+        <td><%= contract.user %></td>
+        <td><%= contract.user %></td>
+        <td><%= link_to 'Show', contract %></td>
+        <td><%= link_to 'Edit', edit_contract_path(contract) %></td>
+        <td><%= link_to 'Destroy', contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contract', new_contract_path %>

@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contract_num: MyString
+  order_identifier: MyString
+  review_date: 2015-07-12 20:47:28
+  sample_income_date: 2015-07-12 20:47:28
+  protocole_done_date: 2015-07-12 20:47:28
+  agre_finish_date: 2015-07-12 20:47:28
+  cost: 9.99
+  backup_cost: 9.99
+  back_pay: 9.99
+  fact_netto: 9.99
+  customer_id: 
+  customer: MyString
+  contract_type_id: 
+  contract_type: MyString
+  user_id: 
+  user: MyString
+
+two:
+  contract_num: MyString
+  order_identifier: MyString
+  review_date: 2015-07-12 20:47:28
+  sample_income_date: 2015-07-12 20:47:28
+  protocole_done_date: 2015-07-12 20:47:28
+  agre_finish_date: 2015-07-12 20:47:28
+  cost: 9.99
+  backup_cost: 9.99
+  back_pay: 9.99
+  fact_netto: 9.99
+  customer_id: 
+  customer: MyString
+  contract_type_id: 
+  contract_type: MyString
+  user_id: 
+  user: MyString

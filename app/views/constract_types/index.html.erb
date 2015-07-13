@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Constract Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Contract type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @constract_types.each do |constract_type| %>
+      <tr>
+        <td><%= constract_type.contract_type %></td>
+        <td><%= link_to 'Show', constract_type %></td>
+        <td><%= link_to 'Edit', edit_constract_type_path(constract_type) %></td>
+        <td><%= link_to 'Destroy', constract_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Constract type', new_constract_type_path %>
