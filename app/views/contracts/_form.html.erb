@@ -10,10 +10,21 @@
       </ul>
     </div>
   <% end %>
-<%= @users.to_json.html_safe %>
+
   <div class="field">
-    <%= f.label :contract_num %><br>
-    <%= f.text_field :contract_num %>
+    <%= f.label :constract_type_id %><br>
+    <%= select_tag :constract_type_id, options_for_select(@contract_types.map{|c| ["#{c.contract_type}",c.id]}, " ") %>    
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= select_tag :user_id, options_for_select(@users.map{|u| ["#{u.email}",u.id]}, " ") %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %><br>
+    <%= select_tag :customer_id, options_for_select(@customers.map{|c| ["#{c.name}",c.id]}) %><%= link_to '+', new_customer_path %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :contract_num, :readonly => true %>
   </div>
   <div class="field">
     <%= f.label :order_identifier %><br>
@@ -36,33 +47,20 @@
     <%= f.date_field :agre_finish_date %>
   </div>
   <div class="field">
-    <%= f.label :cost %><br>
+    <%= f.label 'Cena:' %><br>
     <%= f.text_field :cost %>
   </div>
   <div class="field">
-    <%= f.label :backup_cost %><br>
+    <%= f.label 'Záloha:' %><br>
     <%= f.text_field :backup_cost %>
   </div>
   <div class="field">
-    <%= f.label :back_pay %><br>
+    <%= f.label 'Přeplatek:' %><br>
     <%= f.text_field :back_pay %>
   </div>
   <div class="field">
-    <%= f.label :fact_netto %><br>
+    <%= f.label 'Fakturace netto:' %><br>
     <%= f.text_field :fact_netto %>
-  </div>
-  <div class="field">
-    <%= f.label :customer_id %><br>
-    <%= f.text_field :customer_id %>
-  </div>
-  <div class="field">
-    <%= f.label :contract_type_id %><br>
-    <%= f.text_field :contract_type_id %>
-  </div>
-  <div class="field">
-
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

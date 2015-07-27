@@ -52,33 +52,20 @@
 
 <p>
   <strong>Customer:</strong>
-  <%= @contract.customer %>
-</p>
-
-<p>
-  <strong>Customer:</strong>
-  <%= @contract.customer %>
+  <%= @contract.customer_id %>
 </p>
 
 <p>
   <strong>Contract type:</strong>
-  <%= @contract.contract_type %>
+  <%= @contract.constract_type_id %>
 </p>
 
-<p>
-  <strong>Contract type:</strong>
-  <%= @contract.contract_type %>
-</p>
 
 <p>
   <strong>User:</strong>
-  <%= @contract.user %>
+  <%= @contract.user_id %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @contract.user %>
-</p>
 
 <%= link_to 'Edit', edit_contract_path(@contract) %> |
 <%= link_to 'Back', contracts_path %>

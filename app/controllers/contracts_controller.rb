@@ -5,6 +5,7 @@ class ContractsController < ApplicationController
   # GET /contracts.json
   def index
     @contracts = Contract.all
+    @customers = Customer.all
   end
 
   # GET /contracts/1
@@ -14,17 +15,27 @@ class ContractsController < ApplicationController
 
   # GET /contracts/new
   def new
+    @contract_types = ConstractType.all
+    @users = User.all
     @contract = Contract.new
+    @customers = Customer.all.select('id, name')
   end
 
   # GET /contracts/1/edit
   def edit
+    @contract_types = ConstractType.all
+    @users = User.all
+    @customers = Customer.all.select('id, name')
   end
 
   # POST /contracts
   # POST /contracts.json
   def create
     @contract = Contract.new(contract_params)
+    
+    @contract.customer_id = params['customer_id']
+    @contract.constract_type_id = params['constract_type_id']
+    @contract.user_id = params['user_id']
 
     respond_to do |format|
       if @contract.save
@@ -69,6 +80,6 @@ class ContractsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contract_params
-      params.require(:contract).permit(:contract_num, :order_identifier, :review_date, :sample_income_date, :protocole_done_date, :agre_finish_date, :cost, :backup_cost, :back_pay, :fact_netto, :customer_id, :customer, :contract_type_id, :contract_type, :user_id, :user)
+      params.require(:contract).permit(:contract_num, :order_identifier, :review_date, :sample_income_date, :protocole_done_date, :agre_finish_date, :cost, :backup_cost, :back_pay, :fact_netto, :customer_id, :constract_type_id, :user_id)
     end
 end

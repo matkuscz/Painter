@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712185324) do
+ActiveRecord::Schema.define(version: 20150727125221) do
 
   create_table "adresses", force: :cascade do |t|
     t.string   "street"
@@ -46,13 +46,13 @@ ActiveRecord::Schema.define(version: 20150712185324) do
     t.decimal  "back_pay"
     t.decimal  "fact_netto"
     t.integer  "customer_id"
-    t.integer  "contract_type_id"
+    t.integer  "constract_type_id"
     t.integer  "user_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
 
-  add_index "contracts", ["contract_type_id"], name: "index_contracts_on_contract_type_id"
+  add_index "contracts", ["constract_type_id"], name: "index_contracts_on_constract_type_id"
   add_index "contracts", ["customer_id"], name: "index_contracts_on_customer_id"
   add_index "contracts", ["user_id"], name: "index_contracts_on_user_id"
 

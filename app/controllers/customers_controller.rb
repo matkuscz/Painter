@@ -15,16 +15,24 @@ class CustomersController < ApplicationController
   # GET /customers/new
   def new
     @customer = Customer.new
+    @adresses = Adress.all
   end
+######################################################
+###### Zničit customera a udělat znova!!! ############
+######################################################
+# Protože se nepřidávají Address id do tabulky
 
   # GET /customers/1/edit
   def edit
+    @adresses = Adress.all
   end
 
   # POST /customers
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
+
+    @customer.address_id = params['address_id']
 
     respond_to do |format|
       if @customer.save
@@ -69,6 +77,6 @@ class CustomersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params.require(:customer).permit(:name, :web, :fax, :address_id_id, :address)
+      params.require(:customer).permit(:name, :web, :fax, :address_id)
     end
 end

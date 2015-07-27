@@ -1,4 +1,4 @@
 class Customer < ActiveRecord::Base
-  belongs_to :address_id
+  belongs_to :adress
   has_many :contracts
 end

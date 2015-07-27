@@ -24,8 +24,8 @@
     <%= f.number_field :fax %>
   </div>
   <div class="field">
-    <%= f.label :address_id_id %><br>
-    <%= f.text_field :address_id_id %>
+    <%= f.label :address_id %><br>
+    <%= select_tag :address_id, options_for_select(@adresses.map{|a| ["#{a.street} #{a.city} #{a.description_number}",a.id]}) %><%= link_to '+', new_adress_path %>
   </div>
   <div class="actions">
     <%= f.submit %>

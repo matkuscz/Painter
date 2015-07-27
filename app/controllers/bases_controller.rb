@@ -5,6 +5,10 @@ class BasesController < ApplicationController
   # GET /bases.json
   def index
     #@bases = Base.all
+
+    if user_signed_in?
+      @curent_contracts = Contract.where(user_id: current_user.id)  
+    end
   end
 
   # GET /bases/1
@@ -14,7 +18,6 @@ class BasesController < ApplicationController
 
   # GET /bases/new
   def new
-    @users = User.all
     @basis = Base.new
   end
 

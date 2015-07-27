@@ -1,30 +1,57 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Bases</h1>
-
-<% if @base == nil or @base.empty? %>
+<% if @curent_contracts == nil or @curent_contracts.empty? %>
   <div id='center'>
-    <h1>Tady Bude přehled všeho!!!! BASE stránka!!!</h1>
+    <h1>Tady Bude přehled všeho!!!! Zatím zakázek pro lognutýho uživatele!!!</h1>
   </div>
 <% else %>
+<h1>Seznam zakázek uživatele:<br><br>&nbsp;&nbsp;&nbsp; <strong><%= current_user.email %></strong></h1><br>
+<div id='center_table'>
   <table>
     <thead>
       <tr>
+        <th>Číslo zakázky</th>
+        <th>Číslo obědnávky</th>
+        <th>Zákaník</th>
+        <th>Typ zakázky</th>
+        <th>Datum přezkoumání</th>
+        <th>Datum přijetí vzorků</th>
+        <th>Datum dokončení protokolu</th>
+        <th>Domluvené datum ukončení</th>
+        <th>Cena</th>
+        <th>Záloha</th>
+        <th>Přeplatek</th>
+        <th>Facurace netto</th>
+        <th>Uživatel</th>
         <th colspan="3"></th>
       </tr>
     </thead>
 
     <tbody>
-      <% @bases.each do |basis| %>
+      <% @curent_contracts.each do |contract| %>
         <tr>
-          <td><%= link_to 'Show', basis %></td>
-          <td><%= link_to 'Edit', edit_basis_path(basis) %></td>
-          <td><%= link_to 'Destroy', basis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= contract.contract_num %></td>
+          <td><%= contract.order_identifier %></td>
+          <td><%= contract.customer.name %></td>
+          <td><%= contract.constract_type.contract_type %></td>
+          <td><%= contract.review_date.strftime("%d/%m/%Y")  %></td>
+          <td><%= contract.sample_income_date.strftime("%d/%m/%Y")  %></td>
+          <td><%= contract.protocole_done_date.strftime("%d/%m/%Y")  %></td>
+          <td><%= contract.agre_finish_date.strftime("%d/%m/%Y")  %></td>
+          <td><%= contract.cost %></td>
+          <td><%= contract.backup_cost %></td>
+          <td><%= contract.back_pay %></td>
+          <td><%= contract.fact_netto %></td>
+          <td><%= contract.user.email %></td>
+          <td><%= link_to 'Show', contract %></td>
+          <td><%= link_to 'Edit', edit_contract_path(contract) %></td>
+          <td><%= link_to 'Destroy', contract, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
+</div>
 <% end %>
 <br>
-
+<%= link_to 'Nová zakázka', new_contract_path %>
 <% #= link_to 'New Base', new_basis_path %>
