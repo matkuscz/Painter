@@ -18,7 +18,7 @@ class CustomersController < ApplicationController
     @adresses = Adress.all
   end
 ######################################################
-###### Zničit customera a udělat znova!!! ############
+###### Zni�?it customera a udělat znova!!! ############
 ######################################################
 # Protože se nepřidávají Address id do tabulky
 
