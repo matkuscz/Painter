@@ -1,11 +1,20 @@
 == README
 
+Verze: 0.01 - branch adresaReaktivne
+------------------------------------
+Pokus o REACTivni verzi formulare pro pridani adresy.
+
+Instalace:
+bundle install
+rake db:migrate
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
 * Ruby version
+ruby 2.1.6p336 (2015-04-13 revision 50298) [i386-mingw32]
 
 * System dependencies
 
